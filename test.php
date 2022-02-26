@@ -8,43 +8,21 @@
     <title>Document</title>
 </head>
 <body>
-<form action="test.php" method="post">
-    <h2>In ra thứ trong tuần</h2>
-    <input type="number" name="day" size="30"  placeholder="Nhập ngày" />
-    <button type="submit">In</button>
-
-</form>
+<!--<form action="test.php" method="post">-->
+<!--    <h2>In ra thứ trong tuần</h2>-->
+<!--    <input type="number" name="day" size="30"  placeholder="Nhập ngày" />-->
+<!--    <button type="submit">In</button>-->
+<!---->
+<!--</form>-->
 
 <?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $day = $_POST["day"];
-
-    switch ($day) {
-        case 1:
-            echo "Chủ Nhật";
-            break;
-        case 2:
-            echo "Thứ hai";
-            break;
-        case 3:
-            echo  "Thứ ba";
-            break;
-        case 4:
-            echo "Thứ tư";
-            break;
-        case 5:
-            echo "Thứ năm";
-            break;
-        case 6:
-            echo "Thứ sáu";
-            break;
-        case 7:
-            echo "Thứ bảy";
-            break;
-        default:
-            echo "không có ngày này";
-            break;
+//if ($_SERVER["REQUEST_METHOD"] == "POST") {
+//}
+for ($i = 0; $i < 10; $i ++) {
+    if($i > 3 ) {
+        break;
     }
+    echo "$i <br>";
 }
 ?>
 
