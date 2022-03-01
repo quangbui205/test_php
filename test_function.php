@@ -9,10 +9,17 @@
 </head>
 <body>
 <?php
-function sum($a, $b ) {
-    return $a + $b;
+$a = 5;
+$b = 10;
+
+function testFun(&$a, &$b ) {
+    $temp = $a;
+    $a = $b;
+    $b = $temp;
 }
-echo sum(4, 8);
+testFun($a, $b );
+
+echo $a . ' -- ' . $b;
 ?>
 </body>
 </html>
