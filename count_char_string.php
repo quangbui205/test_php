@@ -53,23 +53,23 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 //        echo $strChar[$i] . $arrCountChar[$i];
 //    }
 
-    $index = $charCount = 0;
+    $index = 0;
     $countChar = $inputStr[0];
     while ($index < strlen($inputStr) - 1) {
+
+        $indexChar = strlen($countChar) - 1;
 
         $count = 0;
         for ($j = $index; $j < strlen($inputStr); $j++) {
 
-            if($countChar[$charCount] == $inputStr[$j]) $count++;
+            if($countChar[$indexChar] === $inputStr[$j]) $count++;
 
-            if($countChar[$charCount] != $inputStr[$j] || $j == strlen($inputStr) - 1) {
+            if($countChar[$indexChar] != $inputStr[$j] || $j == strlen($inputStr) - 1) {
 
                 if($j == strlen($inputStr) - 1) {
                     $countChar = $countChar . $count;
-                }
-                else {
+                } else {
                     $countChar = $countChar . $count . $inputStr[$j];
-                    $charCount += 2;
                 }
 
                 $index += $count;
