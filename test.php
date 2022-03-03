@@ -18,12 +18,21 @@
 <?php
 //if ($_SERVER["REQUEST_METHOD"] == "POST") {
 //}
-for ($i = 0; $i < 10; $i ++) {
-    if($i > 3 ) {
-        break;
+$arrReturn = [];
+
+for($i = 400; $i <= 700; $i++) {
+    $square = $i * $i;
+    $leni = strlen($i);
+    $rsquare = substr((string) $square, -$leni, $leni);
+    $lsquare = substr((string) $square, 0, strlen((string) $square) - strlen($rsquare));
+
+    if($i == (int)$rsquare + (int)$lsquare) {
+        $arrReturn[] = $i;
     }
-    echo "$i <br>";
 }
+
+echo implode(" ", $arrReturn);
+echo 122322;
 ?>
 
 
